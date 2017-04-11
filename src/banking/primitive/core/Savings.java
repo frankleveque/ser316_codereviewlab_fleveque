@@ -2,7 +2,6 @@ package banking.primitive.core;
 
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
-	private int numWithdraws = 0;
 
 	public Savings(String name) {
 		super(name);

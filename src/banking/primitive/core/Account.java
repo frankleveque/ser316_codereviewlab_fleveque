@@ -9,6 +9,8 @@ public abstract class Account implements java.io.Serializable {
 
     protected float balance = 0.0F;
     protected String name;
+	protected int numWithdraws = 0;
+
     private State state;
 
     protected Account(String n) {
