@@ -1,3 +1,11 @@
+/*
+  File:	MainFrame.java
+  Author: ASU Staff
+  Date:	4/10/17
+  
+  Description: UI Frame
+*/
+
 package banking.gui;
 
 import banking.primitive.core.Account;

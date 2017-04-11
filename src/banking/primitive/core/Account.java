@@ -1,5 +1,18 @@
+/*
+  File:	Account.java
+  Author: ASU Staff
+  Date:	4/10/17
+  
+  Description: abstract base class for bank accounts
+*/
+
 package banking.primitive.core;
 
+/**
+Class: Account	
+
+Description: Abstract base class that implements Serializable interface
+*/
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 

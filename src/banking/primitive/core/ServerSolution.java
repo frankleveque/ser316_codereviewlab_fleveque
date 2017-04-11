@@ -1,3 +1,11 @@
+/*
+  File:	ServerSolution.java
+  Author: ASU Staff
+  Date:	4/10/17
+  
+  Description: A specializes AccountServer for handling bank accounts
+*/
+
 package banking.primitive.core;
 
 import java.util.ArrayList;
@@ -8,6 +16,11 @@ import java.io.*;
 
 import banking.primitive.core.Account.State;
 
+/**
+class: ServerSolution	
+
+Description: Implements a specialized account server for managing bank accounts
+*/
 class ServerSolution implements AccountServer {
 
 	static String fileName = "accounts.ser";
@@ -68,6 +81,13 @@ class ServerSolution implements AccountServer {
 		return true;
 	}
 
+	/**
+	  Method: newAccounts
+	  Inputs: type, name, balance
+	  Returns: bool
+
+	  Description: creates a new bank account of type with a name and initial balance
+	*/
 	public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
@@ -76,6 +96,13 @@ class ServerSolution implements AccountServer {
 		return newAccountFactory(type, name, balance);
 	}
 	
+	/**
+	  Method: closeAccount
+	  Inputs: name
+	  Returns: bool
+
+	  Description: sets bank account to closed if exists
+	*/
 	public boolean closeAccount(String name) {
 		Account acc = accountMap.get(name);
 		if (acc == null) {
@@ -104,6 +131,13 @@ class ServerSolution implements AccountServer {
 		return result;
 	}
 	
+	/**
+	  Method: saveAccounts
+	  Inputs: void
+	  Returns: void
+
+	  Description: Serializes accounts to a file
+	*/
 	public void saveAccounts() throws IOException {
 		ObjectOutputStream out = null; 
 		try {
