@@ -1,5 +1,19 @@
+/*
+  File:	Savings.java
+  Author: ASU Staff
+  Date:	4/10/17
+  
+  Description: Savings Account class that inherits from Account
+*/
+
+
 package banking.primitive.core;
 
+/**
+class: Savings	
+
+Description: Implements a savings account
+*/
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 
@@ -10,10 +24,15 @@ public class Savings extends Account {
 	public Savings(String name, float balance) throws IllegalArgumentException {
 		super(name, balance);
 	}
+	
+	
+	/** 
+	  Method: deposit
+	  Inputs: amount
+	  Returns: bool result indicating transaction successful
 
-	/**
-	 * A deposit comes with a fee of 50 cents per deposit
-	 */
+	  Description: A deposit comes with a fee of 50 cents per deposit
+	*/
 	public boolean deposit(float amount) {
 		if (getState() != State.CLOSED && amount > 0.0f) {
 			balance = balance + amount - 0.50F;
@@ -24,10 +43,15 @@ public class Savings extends Account {
 		return false;
 	}
 
-	/**
-	 * A withdrawal. After 3 withdrawals a fee of $1 is added to each withdrawal.
-	 * An account whose balance dips below 0 is in an OVERDRAWN state
-	 */
+	
+	/** 
+	  Method: withdraw
+	  Inputs: amount
+	  Returns: bool result indicating transaction successful
+
+	  Description: A withdrawal. After 3 withdrawals a fee of $1 is added to each withdrawal.
+	  An account whose balance dips below 0 is in an OVERDRAWN state
+	*/
 	public boolean withdraw(float amount) {
 		if (getState() == State.OPEN && amount > 0.0f) {
 			balance = balance - amount;

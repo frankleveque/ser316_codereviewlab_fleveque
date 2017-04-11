@@ -1,3 +1,11 @@
+/*
+  File:	Main.java
+  Author: ASU Staff
+  Date:	4/10/17
+  
+  Description: Entry point for application
+*/
+
 package banking.gui;
 
 import javax.swing.JFrame;

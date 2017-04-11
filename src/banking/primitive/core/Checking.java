@@ -1,5 +1,18 @@
+/*
+  File:	Checking.java
+  Author: ASU Staff
+  Date:	4/10/17
+  
+  Description: Checking Account class that inherits from Account
+*/
+
 package banking.primitive.core;
 
+/**
+class: Checking	
+
+Description: Implements a checking account
+*/
 public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
@@ -16,10 +29,14 @@ public class Checking extends Account {
 		super(name, balance);
 	}
 
+	
 	/**
-	 * A deposit may be made unless the Checking account is closed
-	 * @param float is the deposit amount
-	 */
+	  Method: deposit
+	  Inputs: amount
+	  Returns: bool
+
+	  Description: A deposit may be made unless the Checking account is closed
+	*/
 	public boolean deposit(float amount) {
 		if (getState() != State.CLOSED && amount > 0.0f) {
 			balance = balance + amount;
@@ -31,10 +48,15 @@ public class Checking extends Account {
 		return false;
 	}
 
+	
 	/**
-	 * Withdrawal. After 10 withdrawals a fee of $2 is charged per transaction You may 
-	 * continue to withdraw an overdrawn account until the balance is below -$100
-	 */
+	  Method: withdraw
+	  Inputs: amount
+	  Returns: bool
+
+	  Description: A After 10 withdrawals a fee of $2 is charged per transaction You may 
+	  continue to withdraw an overdrawn account until the balance is below -$100
+	*/
 	public boolean withdraw(float amount) {
 		if (amount > 0.0f) {		
 			// KG: incorrect, last balance check should be >=

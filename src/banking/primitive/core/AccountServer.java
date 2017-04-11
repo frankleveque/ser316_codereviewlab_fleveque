@@ -1,8 +1,21 @@
+/*
+  File:	AccountServer.java
+  Author: ASU Staff
+  Date:	4/10/17
+  
+  Description: Interface for bank account servers
+*/
+
 package banking.primitive.core;
 
 import java.io.IOException;
 import java.util.List;
 
+/**
+Interface: AccountServer	
+
+Description: Interface that defines functionality for account servers
+*/
 public interface AccountServer {
 
 	/** 
